@@ -1,4 +1,4 @@
-# `gcr.io/initializ-buildpacks/datadog`
+# `docker.io/initializ-buildpacks/datadog`
 
 The Initializ Buildpack for Datadog is a Cloud Native Buildpack that contributes and configures the Datadog Agent.
 
