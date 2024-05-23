@@ -1,4 +1,4 @@
-# `https://hub.docker.com/r/datadog`
+# `initializbuildpacks/datadog`
 
 The Initializ Buildpack for Datadog is a Cloud Native Buildpack that contributes and configures the Datadog Agent.
 
