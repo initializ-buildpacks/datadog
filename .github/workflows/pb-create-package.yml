@@ -18,7 +18,7 @@ jobs:
                 username: ${{ secrets.INITIALIZ_BUILDPACKS_DOCKERHUB_USERNAME }}
             - uses: actions/setup-go@v3
               with:
-                go-version: "1.18"
+                go-version: "1.22"
             - name: Install create-package
               run: |
                 #!/usr/bin/env bash
@@ -188,7 +188,7 @@ jobs:
                     --format "${FORMAT}"
                 fi
               env:
-                PACKAGES: docker.io/paketobuildpacks/datadog
+                PACKAGES: docker.io/initializbuildpacks/datadog
                 PUBLISH: "true"
                 VERSION: ${{ steps.version.outputs.version }}
                 VERSION_MAJOR: ${{ steps.version.outputs.version-major }}
