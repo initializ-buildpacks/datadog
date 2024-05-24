@@ -16,9 +16,8 @@ import (
 )
 
 func main() {
-	logger := bard.NewLogger(os.Stdout)
 	libpak.Main(
-		datadog.Detect{Logger: logger},
-		datadog.Build{Logger: logger},
+		datadog.Detect{},
+		datadog.Build{Logger: bard.NewLogger(os.Stdout)},
 	)
 }

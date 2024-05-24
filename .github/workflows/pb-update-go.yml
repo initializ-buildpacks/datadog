@@ -9,10 +9,10 @@ jobs:
         runs-on:
             - ubuntu-latest
         steps:
-            - uses: actions/setup-go@v5
+            - uses: actions/setup-go@v3
               with:
-                go-version: "1.20"
-            - uses: actions/checkout@v4
+                go-version: "1.18"
+            - uses: actions/checkout@v3
             - name: Update Go Version & Modules
               id: update-go
               run: |
@@ -29,7 +29,7 @@ jobs:
 
                 go mod edit -go="$GO_VERSION"
                 go mod tidy
-                go get -u -t ./...
+                go get -u all
                 go mod tidy
 
                 git add go.mod go.sum
@@ -49,8 +49,8 @@ jobs:
                 echo "commit-body=${COMMIT_BODY}" >> "$GITHUB_OUTPUT"
                 echo "commit-semver=${COMMIT_SEMVER}" >> "$GITHUB_OUTPUT"
               env:
-                GO_VERSION: "1.20"
-            - uses: peter-evans/create-pull-request@v6
+                GO_VERSION: "1.18"
+            - uses: peter-evans/create-pull-request@v4
               with:
                 author: ${{ secrets.JAVA_GITHUB_USERNAME }} <${{ secrets.JAVA_GITHUB_USERNAME }}@users.noreply.github.com>
                 body: |-
@@ -69,4 +69,4 @@ jobs:
                 labels: ${{ steps.update-go.outputs.commit-semver }}, type:task
                 signoff: true
                 title: ${{ steps.update-go.outputs.commit-title }}
-                token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
+                token: ${{ secrets.PAT }}

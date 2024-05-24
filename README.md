@@ -1,6 +1,6 @@
-# `initializbuildpacks/datadog`
+# `gcr.io/initializ-buildpacks/datadog`
 
-The Initializ Buildpack for Datadog is a Cloud Native Buildpack that contributes and configures the Datadog Agent.
+The Paketo Buildpack for Datadog is a Cloud Native Buildpack that contributes and configures the Datadog Agent.
 
 ## Behavior
 
@@ -10,19 +10,12 @@ This buildpack will participate if all the following conditions are met
 
 The buildpack will do the following for Java applications:
 
-* Contributes the Datadog Java agent to a layer and configures `$JAVA_TOOL_OPTIONS` or `$BP_NATIVE_IMAGE_BUILD_ARGUMENTS` to use it
+* Contributes the Datadog Java agent to a layer and configures `$JAVA_TOOL_OPTIONS` to use it
 
 The buildpack will do the following for Node.js applications:
 
 * Contributes the Datadog Node.js trace agent to a layer
 * Require the trace agent, if it's not present
-
-
-## Configuration
-| Environment Variable | Description
-| -------------------- | -----------
-| `$BP_DATADOG_ENABLED` | whether to contribute the Datadog trace agent
-| `$BPL_DATADOG_DISABLED` | whether to disable the Datadog trace agent (non native-image Java applications only!)
 
 ## Usage
 
