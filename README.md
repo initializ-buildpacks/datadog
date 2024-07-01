@@ -4,7 +4,7 @@ The Paketo Buildpack for Datadog is a Cloud Native Buildpack that contributes an
 
 ## Behavior
 
-This buildpack will participate if all the following conditions are met
+This buildpack will participate if all the following conditions are met.
 
 * The `$BP_DATADOG_ENABLED` is set to a truthy value (i.e. `true`, `t`, `1` ignoring case)
 
