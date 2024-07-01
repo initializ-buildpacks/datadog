@@ -1,6 +1,6 @@
 module github.com/initializ-buildpacks/datadog
 
-go 1.18
+go 1.22
 
 require (
 	github.com/buildpacks/libcnb v1.27.0
